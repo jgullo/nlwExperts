@@ -40,7 +40,7 @@ header h1 {
   color: white;
 }
 
-/* Vai iniciar uma contagem */
+/* Vai iniciar uma contagem, código corrigido */
 #quiz {
   counter-reset: quiz-item;
 }
