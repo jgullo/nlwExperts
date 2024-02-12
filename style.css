@@ -42,7 +42,7 @@ header h1 {
 
 /* Vai iniciar uma contagem */
 #quiz {
-  counter-reset: quiz-Item;
+  counter-reset: quiz-item;
 }
 
 .quiz-item {
