@@ -1,2 +1,5 @@
 # nlwExperts
-Projeto criado envolvendo JS, HTML e CSS
+Projeto criado envolvendo 
+# JS
+# HTML 
+# CSS

@@ -1,0 +1,150 @@
+*,
+:root {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Inter", sans-serif;
+
+  /* Comandos para afinar as fontes, deixar mais "delicada" */
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-text-size-adjust: 100%;
+}
+
+body {
+  border-radius: 8px;
+  border: 1px solid var(--slate-700, #334155);
+  background: var(--slate-900, #0f172a);
+}
+
+main {
+  padding: 20px;
+  max-width: 640px;
+  margin: 0 auto 64px;
+}
+
+header {
+  margin-top: 64px;
+  padding-bottom: 24px;
+  border-bottom: 1px solid #334155;
+}
+
+#logo {
+  margin-bottom: 24px;
+}
+
+header h1 {
+  font-size: 30px;
+  color: white;
+}
+
+/* Vai iniciar uma contagem */
+#quiz {
+  counter-reset: quiz-Item;
+}
+
+.quiz-item {
+  margin-top: 24px;
+  border: 1px solid #475569;
+  border-radius: 6px;
+
+  /* Esse comando serve para nao deixar as bordas transbordarem */
+  overflow: hidden;
+}
+
+.quiz-item h3 {
+  padding: 16px 20px;
+  background: var(--slate-800, #1e293b);
+  color: white;
+
+  /* Essa parte do comando, serviu para colocar o contador das perguntas, ao lado do título da pergunta */
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+/* Cada vez que ele ler um h3, ele vai adicionar um número, em conjunto c a função que usamos acima no #quiz */
+.quiz-item h3:before {
+  counter-increment: quiz-item;
+  content: counter(quiz-item);
+
+  background-color: #475569;
+  width: 28px;
+  height: 28px;
+  font-size: 12px;
+  border-radius: 50%;
+
+  /* Essa parte do código vai alinhar o contador ao meio e acima no PAI dele, nós o colocamos ao lado do h3 */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  /* Serve para evitar que os textos e botoes se apertem ao minimizar a tela */
+  flex-shrink: 0;
+}
+
+.quiz-item dl {
+  padding: 20px 24px;
+  display: grid;
+  gap: 8px;
+  background-color: #334155;
+  color: white;
+}
+
+/* Puxei a class quizItem, puxei DL e dentro dela puxei DT, para dar informaçoes a ela */
+.quiz-item dl dt {
+  font-size: 14px;
+  line-height: 24px;
+  letter-spacing: 0;
+
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+input {
+  /* all significa todas as propriedades dentro daquela função */
+  all: unset;
+  border: 1px solid #94a3b8;
+  width: 16px;
+  height: 16px;
+
+  border-radius: 50%;
+
+  /* Input before continha display-block, porém ao adicionar flex ao Pai dele, usamos essas 3 funçoes para deixar a marcação do input bem ao meio */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  /* Serve para evitar que os textos e botoes se apertem ao minimizar a tela */
+  flex-shrink: 0;
+}
+
+/* seletor de click, conferi o estado do checked */
+input:checked {
+  border: 1px solid #a3e635;
+}
+
+/* Criando um elemento para acontecer antes da função checked chegar ao input */
+input:checked:before {
+  /* Criando um "elemento" dentro do input, mesmo que vazio, faz com que eu possa atribuir outras propriedades CSS ao input, ja que ele nao tem conteúdo. */
+  content: "";
+  width: 10px;
+  height: 10px;
+  background-color: #a3e635;
+  border-radius: 50px;
+}
+
+#acertos {
+  text-align: center;
+  background-color: #a3e635;
+
+  position: fixed;
+  bottom: 0;
+  left: 0;
+
+  width: 100%;
+  padding: 12px;
+}
